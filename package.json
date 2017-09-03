@@ -1,0 +1,22 @@
+{
+  "name": "reflect-js",
+  "version": "1.0.0",
+  "description": "Extended reflection for Node JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlaanderson/reflect-js.git"
+  },
+  "keywords": [
+    "Reflection"
+  ],
+  "author": "Michael Anderson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mlaanderson/reflect-js/issues"
+  },
+  "homepage": "https://github.com/mlaanderson/reflect-js#readme"
+}
