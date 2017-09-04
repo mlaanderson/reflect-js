@@ -1,43 +1,31 @@
 const ReflectExt = require('.');
 
-var wm = new WeakMap();
-
 class Person {
-    constructor(name, birthday) {
-        this.name = name || 'No Name';
-        this.birthday = birthday || new Date(Date.now());
-
-        if (typeof this.birthday === 'string') {
-            this.birthday = new Date(Date.parse(this.birthday));
-        }
-        wm.set(this, 'TEST');
-
-        Object.seal(this);
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
     }
 
-    get age() {
-        let now = new Date();
-        let yearDiff = now.getUTCFullYear() - this.birthday.getUTCFullYear();
-        if ((now.getUTCMonth() < this.birthday.getUTCMonth()) || ((now.getUTCMonth() == this.birthday.getUTCMonth()) && (now.getUTCDate() < this.birthday.getUTCDate()))) {
-            yearDiff--;
-        }
-
-        return yearDiff;
+    get birthYear() {
+        return new Date().getUTCFullYear() - this.age;
     }
 
-    get test() {
-        return wm.get(this);
-    }
-
-    set test(value) {
-        wm.set(this, value);
-    }
-
-    toString(a) {
-        return `${this.name} is ${this.age} years old`;
+    doBirthday() {
+        this.age++;
     }
 }
 
-var michael = new Person('Michael Anderson', '1973-09-27');
+var michael = new Person('Michael', 46);
 
-console.log(ReflectExt.getOwnDescriptors(michael));
+var methods = ReflectExt.getOwnMethodDescriptors(michael);
+var fields = ReflectExt.getOwnFieldDescriptors(michael);
+var props = ReflectExt.getOwnPropertyDescriptors(michael);
+
+console.log(michael);
+
+methods[0].value.call(michael); // calls the doBirthday method
+
+console.log(michael);
+
+console.log(props[0].getter.value.call(michael)); // calls the getter for the birthYear property
+console.log(fields[0].value); // reads the name field value
