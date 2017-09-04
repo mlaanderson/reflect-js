@@ -50,10 +50,6 @@ class MethodDescriptor extends Descriptor {
             this.value = object.value;
         }
 
-        this.writable = !!object.writable;
-        this.enumerable = !!object.enumerable;
-        this.configurable = !!object.configurable;
-
         let re;
         if (this.value.toString().startsWith('class')) {
             re = /constructor\(([^\)]*)\)/;
