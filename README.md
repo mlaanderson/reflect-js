@@ -7,13 +7,13 @@ to provide additional capability.
 
 ## API
 In addition to the API provided by Reflect, Reflect-js provides:
-* [getOwnConstructorDescriptor(target: object) => MethodDescriptor](#getOwnConstructorDescriptor)
-* [getOwnDescriptor(target: object, name: string) => Descripitor](#getOwnDescriptor)
-* [getOwnDescriptors(target: object, methods?: boolean) => Array<Descriptor>](#getOwnDescriptors)
-* [getOwnFieldDescriptors(target: object) => Array<FieldDescriptor>](#getOwnFieldDescriptors)
-* [getOwnKeys(target: object, methods?: boolean) => Array<string>](#getOwnKeys)
-* [getOwnMethodDescriptors(target: object) => Array<MethodDescriptor>](#getOwnMethodDescriptors)
-* [getOwnPropertyDescriptors(target: object) => Array<PropertyDescriptor>](#getOwnPropertyDescriptors)
+* [getOwnConstructorDescriptor(target: object) => MethodDescriptor](#getownconstructordescriptor)
+* [getOwnDescriptor(target: object, name: string) => Descripitor](#getowndescriptor)
+* [getOwnDescriptors(target: object, methods?: boolean) => Array<Descriptor>](#getowndescriptors)
+* [getOwnFieldDescriptors(target: object) => Array<FieldDescriptor>](#getownfielddescriptors)
+* [getOwnKeys(target: object, methods?: boolean) => Array<string>](#getownkeys)
+* [getOwnMethodDescriptors(target: object) => Array<MethodDescriptor>](#getownmethoddescriptors)
+* [getOwnPropertyDescriptors(target: object) => Array<PropertyDescriptor>](#getownpropertydescriptors)
 
 ### Classes
 Most Reflect-js methods return instances of the Descriptor interface:
